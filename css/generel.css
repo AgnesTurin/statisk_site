@@ -81,7 +81,7 @@
 
   .saleBadge {
     position: absolute;
-    bottom: 70%;
+    bottom: 60%;
     left: 7%;
     background-color: red;
     padding: 3px 7px;
@@ -90,8 +90,17 @@
 
   .soldout {
     position: absolute;
-    bottom: 70%;
-    left: 40%;
+    bottom: 60%;
+    left: 37%;
+    background-color: gray;
+    padding: 3px 7px;
+    color: white;
+  }
+
+  .soldout2 {
+    position: absolute;
+    bottom: 60%;
+    left: 67%;
     background-color: gray;
     padding: 3px 7px;
     color: white;
@@ -164,6 +173,15 @@
     position: absolute;
     bottom: 85%;
     left: 7%;
+    background-color: gray;
+    padding: 3px 7px;
+    color: white;
+  }
+
+  .soldout2 {
+    position: absolute;
+    bottom: 85%;
+    left: 15%;
     background-color: gray;
     padding: 3px 7px;
     color: white;

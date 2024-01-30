@@ -8,13 +8,31 @@
   src: url(../fonts/abrilfatface-regular-webfont.woff2);
 }
 
+body {
+  background-color: rgb(248, 244, 246);
+}
+
 h1 {
   color: rgb(0, 0, 0);
   font-family: "urbanist";
 }
 
+h2 {
+  color: rgb(0, 0, 0);
+  font-family: "urbanist";
+}
+
+h3 {
+  color: rgb(0, 0, 0);
+  font-family: "urbanist";
+}
 .newprice {
   color: red;
+}
+
+P {
+  color: rgb(0, 0, 0);
+  font-family: "urbanist";
 }
 
 .originalprice {
