@@ -8,12 +8,14 @@
   }
 
   .imgs img {
-    max-width: 30%;
+    max-width: 100%;
     height: auto;
   }
 
   .box {
-    background-color: rgb(185, 180, 180);
+    background-color: rgb(255, 252, 252);
+    border: solid 4px rgb(0, 0, 0);
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -21,12 +23,20 @@
     padding: 2em;
   }
 
+  .box:hover {
+    transform: scale(1.04);
+  }
+
   .box2 {
-    border: solid 4px black;
+    border: solid 1px black;
     border-radius: 5px;
     padding: 20px;
     width: 300px;
+    margin-top: 20px;
+    margin-left: 3px;
+    margin-right: 3px;
   }
+
   .grid_1-1-1 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -35,7 +45,14 @@
 
   .grid_1-1 {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-top: 30px;
+  }
+
+  .grid_1-1-1-1_nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 5px;
   }
 
@@ -44,38 +61,75 @@
     height: auto;
     margin-bottom: 10px;
   }
+
+  .box2:hover {
+    transform: scale(1.04);
+  }
+
+  button {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border: solid 1px black;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    transform: scale(1.04);
+  }
+
+  .saleBadge {
+    position: absolute;
+    bottom: 70%;
+    left: 7%;
+    background-color: red;
+    padding: 3px 7px;
+    color: white;
+  }
+
+  .soldout {
+    position: absolute;
+    bottom: 70%;
+    left: 40%;
+    background-color: gray;
+    padding: 3px 7px;
+    color: white;
+  }
 }
 
-@media only screen and (max-width: 800px) {
-  body {
-    body {
-      margin: 5%;
-    }
-  }
+@media screen and (max-width: 800px) {
+  /* burger */
 
-  .imgs {
-    text-align: center;
+  .imgs img {
+    max-width: 100%;
+    height: auto;
   }
-
-  /* .imgs img {
-    max-width: 60%;
-    /* height: auto; 
-  } */
 
   .box {
-    background-color: black;
+    background-color: rgb(255, 252, 252);
+    border: solid 4px rgb(1, 1, 1);
+    border-radius: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 5px;
+    margin: 10px;
     padding: 2em;
   }
 
+  .box:hover {
+    transform: scale(1.04);
+  }
+
   .box2 {
-    border: solid 4px black;
+    position: relative;
+    border: solid 1px black;
     border-radius: 5px;
     padding: 20px;
     width: 300px;
+    margin-top: 10px;
+    margin-left: 3px;
+    margin-right: 3px;
   }
 
   .box2 img {
@@ -84,26 +138,34 @@
     margin-bottom: 10px;
   }
 
-  .grid_1-1-1 {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 10px;
+  button {
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
   }
 
-  .grid_1-1 {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 5px;
+  button:hover {
+    transform: scale(1.04);
   }
-}
 
-header {
-  color: aqua;
-  padding: 10px; /* Optional: Add some padding for better visibility */
-}
+  .saleBadge {
+    position: absolute;
+    bottom: 85%;
+    left: 7%;
+    background-color: red;
+    padding: 3px 7px;
+    color: white;
+  }
 
-nav {
-  display: flex;
-  justify-content: space-between; /* Optional: Justify content for even distribution of links */
-  align-items: center;
+  .soldout {
+    position: absolute;
+    bottom: 85%;
+    left: 7%;
+    background-color: gray;
+    padding: 3px 7px;
+    color: white;
+  }
 }
