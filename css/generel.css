@@ -105,6 +105,24 @@
     padding: 3px 7px;
     color: white;
   }
+
+  .soldout3 {
+    position: absolute;
+    bottom: -20%;
+    left: 37%;
+    background-color: gray;
+    padding: 3px 7px;
+    color: white;
+  }
+
+  .soldout4 {
+    position: absolute;
+    bottom: -20%;
+    left: 7%;
+    background-color: gray;
+    padding: 3px 7px;
+    color: white;
+  }
 }
 
 @media screen and (max-width: 800px) {
@@ -148,9 +166,9 @@
   }
 
   button {
-    background-color: green;
-    color: white;
-    border: none;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border: solid 1px black;
     border-radius: 4px;
     padding: 10px 20px;
     cursor: pointer;
@@ -162,7 +180,7 @@
 
   .saleBadge {
     position: absolute;
-    bottom: 85%;
+    bottom: 70%;
     left: 7%;
     background-color: red;
     padding: 3px 7px;
@@ -179,6 +197,24 @@
   }
 
   .soldout2 {
+    position: absolute;
+    bottom: 85%;
+    left: 15%;
+    background-color: gray;
+    padding: 3px 7px;
+    color: white;
+  }
+
+  .soldout3 {
+    position: absolute;
+    bottom: 85%;
+    left: 15%;
+    background-color: gray;
+    padding: 3px 7px;
+    color: white;
+  }
+
+  .soldout4 {
     position: absolute;
     bottom: 85%;
     left: 15%;
