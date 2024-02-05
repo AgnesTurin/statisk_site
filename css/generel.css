@@ -37,9 +37,9 @@
     margin-right: 3px;
   }
 
-  .grid_1-1-1 {
+  .produktListe {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
     gap: 5px;
   }
 
@@ -80,48 +80,26 @@
   }
 
   .saleBadge {
-    position: absolute;
-    bottom: 60%;
-    left: 7%;
+    position: relative;
+    bottom: 74%;
+    left: 74%;
+    width: 2em;
+    height: 1.5em;
     background-color: red;
     padding: 3px 7px;
     color: white;
   }
 
   .soldout {
-    position: absolute;
-    bottom: 60%;
-    left: 37%;
+    position: relative;
+    bottom: 70%;
+    left: 69%;
+    width: 3.5em;
+    height: 1.5em;
     background-color: gray;
     padding: 3px 7px;
     color: white;
-  }
-
-  .soldout2 {
-    position: absolute;
-    bottom: 60%;
-    left: 67%;
-    background-color: gray;
-    padding: 3px 7px;
-    color: white;
-  }
-
-  .soldout3 {
-    position: absolute;
-    bottom: -20%;
-    left: 37%;
-    background-color: gray;
-    padding: 3px 7px;
-    color: white;
-  }
-
-  .soldout4 {
-    position: absolute;
-    bottom: -20%;
-    left: 7%;
-    background-color: gray;
-    padding: 3px 7px;
-    color: white;
+    text-align: center;
   }
 }
 
