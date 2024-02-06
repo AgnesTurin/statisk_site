@@ -22,41 +22,63 @@
           <hr />
     </header>
     <main>
-    <div class="grid_1-1">
-        <div class="box2">
-            <img src="../imgs/nike_bukser.png" alt="bukser">
-            
-         </div>
-
-         <div>
-         <div class="saleBadge">-65%</div>
-         <h3>Capri træningsnukser</h3>
-         <div class="pricechange">
-           <p class="newprice">349 DKK</p>
-           <p class="originalprice">999 DKK</p>
-          <button>Læg i kurven</button>
-        </div>
-    </div>
+        <ol class="breadcrumbs">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="productlist.html">Brands</a></li>
+          <li>Puma</li>
+          <li>Grey Leaping Cat T-shirt</li>
+        </ol>
+        <section class="product">
+          <img src="https://kea-alt-del.dk/t7/images/webp/640/1532.webp" alt="" />
+          <div class="productInfo">
+            <p class="productBrand">Puma</p>
+            <p class="productName">Grey Leaping Cat T-shirt</p>
+            <p class="productPrice">899 DKK</p>
+            <div class="productColor">
+              <p>Color:</p>
+              <p>Grey</p>
+            </div>
+            <div class="colorImg">
+              <img
+                src="https://kea-alt-del.dk/t7/images/webp/640/1532.webp"
+                alt=""
+              />
+            </div>
+            <div class="productSize">
+              <p>Choose a size:</p>
+              <label>
+                <select name="liste">
+                  <option>XS</option>
+                  <option>S</option>
+                  <option>M</option>
+                  <option>L</option>
+                  <option>XL</option>
+                </select>
+              </label>
+            </div>
+            <div class="addProduct">Add to basket</div>
+          </div>
+        </section>
+      </main>
     </main>
     <footer>
-      <div class="footer_grid">
-        <h4>Nyhedsbrev</h4>
-        <p class="footer_p">Tilmeld dig vores nyhedsbrev</p>
-        <form name="kontakt" netlify>
-          <div class="form-felt">
-            <label for="email"> </label>
-            <input
-              placeholder="@mail.dk"
-              type="email"
-              name="email"
-              id="email"
-            />
-          </div>
-          <button type="submit">Indsend</button>
-        </form>
-      </div>
-    </section>
-  </footer>
-<script src="../js/script.js"></script>
+        <div class="footer_grid">
+            <h4>Nyhedsbrev</h4>
+            <p class="footer_p">Tilmeld dig vores nyhedsbrev</p>
+            <form name="kontakt" netlify>
+                <div class="form-felt">
+                    <label for="email"> </label>
+                    <input
+                        placeholder="@mail.dk"
+                        type="email"
+                        name="email"
+                        id="email"
+                    />
+                </div>
+                <button type="submit">Indsend</button>
+            </form>
+        </div>
+    </footer>
+    <script src="../js/product.js"></script>
 </body>
 </html>

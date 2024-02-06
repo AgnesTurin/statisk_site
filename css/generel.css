@@ -1,203 +1,484 @@
-@media (min-width: 800px) {
-  body {
-    margin: 5%;
-  }
-
-  .imgs {
-    text-align: center;
-  }
-
-  .imgs img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  .box {
-    background-color: rgb(255, 252, 252);
-    border: solid 4px rgb(0, 0, 0);
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 5px;
-    padding: 2em;
-  }
-
-  .box:hover {
-    transform: scale(1.04);
-  }
-
-  .box2 {
-    border: solid 1px black;
-    border-radius: 5px;
-    padding: 20px;
-    width: 300px;
-    margin-top: 20px;
-    margin-left: 3px;
-    margin-right: 3px;
-  }
-
-  .produktListe {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-    gap: 5px;
-  }
-
-  .grid_1-1 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2px;
-    margin-top: 30px;
-  }
-
-  .grid_1-1-1-1_nav {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 5px;
-  }
-
-  .box2 img {
-    width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-  }
-
-  .box2:hover {
-    transform: scale(1.04);
-  }
-
-  button {
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
-    border: solid 1px black;
-    border-radius: 4px;
-    padding: 10px 20px;
-    cursor: pointer;
-  }
-
-  button:hover {
-    transform: scale(1.04);
-  }
-
-  .saleBadge {
-    position: relative;
-    bottom: 74%;
-    left: 74%;
-    width: 2em;
-    height: 1.5em;
-    background-color: red;
-    padding: 3px 7px;
-    color: white;
-  }
-
-  .soldout {
-    position: relative;
-    bottom: 70%;
-    left: 69%;
-    width: 3.5em;
-    height: 1.5em;
-    background-color: gray;
-    padding: 3px 7px;
-    color: white;
-    text-align: center;
-  }
+* {
+  box-sizing: border-box;
 }
 
-@media screen and (max-width: 800px) {
-  /* burger */
+body {
+  line-height: 1.5;
+  margin: 40px 80px;
+  padding: 0;
+  font-family: "urbanist";
+}
 
-  .imgs img {
-    max-width: 100%;
-    height: auto;
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Navigation */
+
+/* Home navigation*/
+
+.bodyHome {
+  margin: 0;
+}
+
+.homeNav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.homeNav h1 {
+  margin: 0;
+  font-weight: 600;
+  font-size: 6em;
+  text-align: center;
+}
+.homeNav h1 span {
+  font-weight: 400;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  margin-top: 50px;
+  justify-content: center;
+}
+.menu a {
+  display: flex;
+  list-style: none;
+  text-decoration: none;
+  font-size: 1.4rem;
+  background-color: #f4efe6;
+  padding: 15px;
+  border-radius: 3px;
+  box-shadow: 4px 7px #686867;
+  transition: 0.2s;
+}
+.menu a:hover {
+  transform: scale(1.1);
+  transition: 0.2s;
+}
+
+/* Main navigation */
+
+.mainNav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 70px 0;
+}
+.mainNav h1 {
+  margin: 0;
+  font-weight: 600;
+  font-size: 2em;
+}
+.mainNav h1 span {
+  font-weight: 400;
+}
+
+nav {
+  display: flex;
+  justify-content: start;
+  font-size: 1.2rem;
+}
+nav ul {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+}
+nav li {
+  list-style: none;
+  justify-content: space-around;
+}
+nav a {
+  padding-bottom: 5px;
+}
+nav a:hover {
+  border-bottom: 1px solid black;
+}
+
+/* Kategori siden */
+
+.categories {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2em;
+  text-align: center;
+}
+
+.categories a {
+  background-color: #f9f7f1;
+  padding: 40px 5px;
+  font-size: 1.2em;
+  border-radius: 3px;
+  transition: 0.2s;
+  border-radius: 0.5em;
+  border: solid black;
+}
+
+.categories a:hover {
+  transform: scale(1.03);
+  transition: 0.2s;
+}
+
+/* Prouktlist siden */
+
+.hide {
+  display: none;
+}
+
+.imgPosition {
+  position: relative;
+}
+
+.productList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 290px));
+  gap: 2rem;
+}
+
+.productCard {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border-radius: 0.5em;
+  border: solid black;
+  padding: 10%;
+}
+
+.productCard:hover {
+  transform: scale(1.04);
+}
+
+.productCard p {
+  margin: 5px 0;
+}
+
+.productlistBrand {
+  color: rgb(0, 0, 0);
+  padding-top: 8px;
+}
+
+.productlistName {
+  font-size: 0.8rem;
+}
+
+/* On sale */
+
+.onSale {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.newPrice {
+  color: red;
+}
+
+.originalPrice {
+  color: gray;
+  text-decoration: line-through;
+}
+
+.saleBadge {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background-color: red;
+  padding: 3px 7px;
+  color: white;
+  font-family: "urbanist";
+  font-size: 0.8rem;
+}
+
+/* Sold out */
+
+.soldOut img {
+  opacity: 50%;
+}
+
+.soldoutBadge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: grey;
+  padding: 3px 7px;
+  color: white;
+  font-family: "urbanist";
+  font-size: 0.8rem;
+}
+
+/* Produkt siden */
+
+.product {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4em;
+}
+
+/* Breadcrumbs */
+
+.breadcrumbs {
+  display: flex;
+  list-style-type: none;
+  padding: 0 0 10px 0;
+}
+
+.breadcrumbs a {
+  padding-bottom: 1px;
+  border-bottom: 1px solid #686867;
+}
+
+.breadcrumbs a:hover {
+  border-bottom: 2px solid #686867;
+}
+
+.breadcrumbs li::after {
+  content: " > ";
+  font-size: 0.8rem;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 10px;
+}
+.breadcrumbs li:last-child::after {
+  content: "";
+}
+
+/* Info om produkt */
+
+.productInfo {
+  display: flex;
+  flex-direction: column;
+}
+.productBrand {
+  font-size: 1.2em;
+  color: grey;
+  margin: 0;
+}
+.productName {
+  font-size: 2em;
+  margin: 7px 0;
+}
+.productPrice {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+/* Produkt farve */
+
+.productColor {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  margin-top: 20px;
+}
+.productColor p {
+  font-size: 1.1em;
+}
+.colorImg {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  max-width: 10%;
+}
+.colorImg img:hover {
+  border: 1px solid #686867;
+  cursor: pointer;
+}
+
+/* Produkt størrelse */
+
+.productSize {
+  margin-top: 10px;
+}
+
+.productSize p {
+  font-size: 1.1em;
+}
+
+select {
+  padding: 8px;
+  cursor: pointer;
+}
+
+/* Tilføj produktet */
+
+.addProduct {
+  color: black;
+  background-color: #f4efe6;
+  width: fit-content;
+  width: 80%;
+  padding: 14px 20px;
+  text-align: center;
+  cursor: pointer;
+  margin-top: 30px;
+  transition: 0.2s;
+}
+
+.addProduct:hover {
+  transform: scale(1.03);
+  transition: 0.2s;
+}
+
+/* Mobil version */
+
+@media screen and (max-width: 600px) {
+  body {
+    margin: 30px 20px;
   }
 
-  .box {
-    background-color: rgb(255, 252, 252);
-    border: solid 4px rgb(1, 1, 1);
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 10px;
-    padding: 2em;
+  p {
+    font-size: 1rem;
   }
 
-  .box:hover {
-    transform: scale(1.04);
+  h1 {
+    margin-bottom: 30px;
+    font-size: 1.8em;
   }
 
-  .box2 {
-    position: relative;
-    border: solid 1px black;
-    border-radius: 5px;
-    padding: 20px;
-    width: 300px;
+  /* Navigation */
+
+  .mainNav {
+    margin: 0 0 40px 0;
+  }
+  .mainNav h1 {
+    font-size: 1em;
+  }
+
+  nav {
+    font-size: 1rem;
+  }
+  nav ul {
+    gap: 10px;
+  }
+
+  /* Home */
+
+  .homeNav {
+    min-height: 50vh;
+  }
+  .homeNav h1 {
+    font-size: 3em;
+  }
+
+  .menu {
+    gap: 20px;
+  }
+  .menu a {
+    font-size: 1rem;
+  }
+
+  /* Kategori siden */
+
+  .categories {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.8em;
+  }
+
+  .categories a {
+    padding: 20px 8px;
+    font-size: 0.8em;
+  }
+
+  /* Prouktlist siden */
+
+  .productList {
+    justify-content: center;
+  }
+
+  .productCard p {
+    margin: 2px 0;
+    font-size: 1rem;
+  }
+
+  .productListBrand {
+    padding-top: 6px;
+  }
+
+  /* Produkt siden */
+
+  .product {
+    display: block;
+  }
+
+  /* Breadcrumbs */
+
+  .breadcrumbs {
+    padding: 0 0 5px 0;
+  }
+
+  .breadcrumbs li {
+    font-size: 0.8em;
+  }
+
+  .breadcrumbs li::after {
+    font-size: 0.8rem;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+  }
+
+  /* Info om produkt */
+
+  .productBrand {
+    font-size: 1em;
     margin-top: 10px;
-    margin-left: 3px;
-    margin-right: 3px;
+  }
+  .productName {
+    font-size: 1.2em;
+    margin: 5px 0;
+  }
+  .productPrice {
+    font-size: 1.2em;
   }
 
-  .box2 img {
-    width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-  }
+  /* Produkt farve */
 
-  button {
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
-    border: solid 1px black;
-    border-radius: 4px;
-    padding: 10px 20px;
+  .productColor {
+    margin-top: 10px;
+  }
+  .productColor p {
+    font-size: 1em;
+  }
+  .colorImg {
+    gap: 10px;
+    max-width: 15%;
+  }
+  .colorImg img:hover {
+    border: 1px solid #686867;
     cursor: pointer;
   }
 
-  button:hover {
-    transform: scale(1.04);
+  /* Produkt størrelse */
+
+  .productSize {
+    margin-top: 5px;
   }
 
-  .saleBadge {
-    position: absolute;
-    bottom: 70%;
-    left: 7%;
-    background-color: red;
-    padding: 3px 7px;
-    color: white;
+  .productSize p {
+    font-size: 1em;
   }
 
-  .soldout {
-    position: absolute;
-    bottom: 85%;
-    left: 7%;
-    background-color: gray;
-    padding: 3px 7px;
-    color: white;
+  select {
+    padding: 5px;
+    cursor: pointer;
   }
 
-  .soldout2 {
-    position: absolute;
-    bottom: 85%;
-    left: 15%;
-    background-color: gray;
-    padding: 3px 7px;
-    color: white;
-  }
+  /* Tilføj produktet */
 
-  .soldout3 {
-    position: absolute;
-    bottom: 85%;
-    left: 15%;
-    background-color: gray;
-    padding: 3px 7px;
-    color: white;
-  }
-
-  .soldout4 {
-    position: absolute;
-    bottom: 90%;
-    left: 15%;
-    background-color: gray;
-    padding: 3px 7px;
-    color: white;
+  .addProduct {
+    width: 100%;
+    padding: 14px 20px;
+    text-align: center;
+    margin-top: 20px;
   }
 }

@@ -26,28 +26,11 @@ h3 {
   color: rgb(0, 0, 0);
   font-family: "urbanist";
 }
-.newprice {
-  color: red;
-}
 
-P {
-  color: rgb(0, 0, 0);
-  font-family: "urbanist";
-}
-
-.originalprice {
-  color: gray;
-  text-decoration: line-through;
-}
-
-.pricechange {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-}
-
-.opacity {
-  opacity: 0.5;
+a {
+  list-style: none;
+  text-decoration: none;
+  color: black;
 }
 
 ul {
@@ -69,5 +52,13 @@ a {
 }
 
 a:hover {
-  color: cornflowerblue;
+  color: rgb(180, 176, 167);
+}
+.newprice {
+  color: red;
+}
+
+P {
+  color: rgb(0, 0, 0);
+  font-family: "urbanist";
 }

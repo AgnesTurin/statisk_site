@@ -1,36 +1,75 @@
-window.addEventListener("DOMContentLoaded", init);
+const productsURL = "https://kea-alt-del.dk/t7/api/products";
 
-const productsURL = "https://api.punkapi.com/v2/beers";
-
+// Definerer variabler
 let productTemplate;
-let produktListe;
+let productList;
+let productClone;
 
-function init() {
-  console.log("init");
+// Fetcher dataen fra url'en
+fetch(productsURL)
+  .then((response) => response.json())
+  .then(showProducts);
 
-  productTemplate = document.querySelector(".productTemplate");
-  console.log("productTemplate", productTemplate);
-
-  produktListe = document.querySelector(".produktListe");
-  console.log("produktListe", produktListe);
-
-  fetch(productsURL)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (json) {
-      showProducts(json);
-    });
+function showProducts(products) {
+  // Looper og kalder funktionen showProduct
+  products.forEach(showProduct);
 }
 
-function showProducts(productJSON) {
-  let productClone;
+function showProduct(product) {
+  console.log(product);
+  // Fang element
+  productTemplate = document.querySelector(".productTemplate").content;
 
-  productJSON.forEach((product) => {
-    console.log("product", product);
-    productClone = productTemplate.cloneNode(true).content;
-    productClone.querySelector("h3").textContent = product.name;
-    produktListe.appendChild(productClone);
-  });
+  // Lav en kopi
+  productClone = productTemplate.cloneNode(true);
+
+  // Ændre indhold
+  productClone.querySelector(".productlistBrand").textContent =
+    product.brandname;
+  productClone.querySelector(".productlistName").textContent =
+    product.productdisplayname;
+  productClone.querySelector(
+    ".productlistPrice"
+  ).textContent = `${product.price} DKK`;
+  productClone.querySelector(
+    "img"
+  ).src = `https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp`;
+
+  // Man går til den rigtige produktoversigt, når man klikker på et produkt på produktlisten.
+  productClone.querySelector("a").href = `product.html?id=${product.id}`;
+
+  // Produktet er udsolgt
+  if (product.soldout) {
+    // Tilføjer klassen soldOut og fjerner klassen hide, så man kan se soldOut stylingen.
+    productClone.querySelector(".productCard").classList.add("soldOut");
+    productClone.querySelector(".soldoutBadge").classList.remove("hide");
+  }
+
+  // Produktet er på udsalg
+  if (product.discount) {
+    // Fjerner klassen hide til de nye priser, og tilføjer klassen hide fra den gamele pris, så man kun kan se stylingen af prisændringerne.
+    productClone.querySelector(".newPrice").classList.remove("hide");
+    productClone.querySelector(".originalPrice").classList.remove("hide");
+    productClone.querySelector(".productlistPrice").classList.add("hide");
+
+    // Ændrer indholdet af priserne så det er dynamisk. Og på den nye pris, trækker jeg rabatprocenten fra.
+    productClone.querySelector(".newPrice").textContent = `${(
+      product.price -
+      (product.discount / 100) * product.price
+    ).toFixed(0)} DKK`;
+    productClone.querySelector(
+      ".originalPrice"
+    ).textContent = `${product.price} DKK`;
+
+    // Fjerne klassen hide, så man nu kan se procent on sale mærket.
+    productClone.querySelector(".saleBadge").classList.remove("hide");
+    // Ændrer indholdet
+    productClone.querySelector(
+      ".saleBadge"
+    ).textContent = `${product.discount} %`;
+  }
+
+  // Appende
+  productList = document.querySelector(".productList");
+  productList.appendChild(productClone);
 }
-
