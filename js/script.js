@@ -1,4 +1,8 @@
-const productsURL = "https://kea-alt-del.dk/t7/api/products";
+// Definerer variabler, der giver mig data på de forskellige produkter.
+const urlParams = new URLSearchParams(window.location.search);
+const subcategory = urlParams.get("subcategory");
+
+const productsURL = `https://kea-alt-del.dk/t7/api/products?subcategory=${subcategory}`;
 
 // Definerer variabler
 let productTemplate;
@@ -13,6 +17,8 @@ fetch(productsURL)
 function showProducts(products) {
   // Looper og kalder funktionen showProduct
   products.forEach(showProduct);
+
+  document.querySelector(".subcategory_heading").textContent = subcategory;
 }
 
 function showProduct(product) {
